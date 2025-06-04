@@ -78,3 +78,15 @@ Thumbs.db
 
 # Cursor 
 .cursor/
+
+# Personal configuration files
+claude_desktop_config_*.json
+claude_desktop_configs.md
+claude_desktop_remote_configs.md
+CONNECTION_SOLUTION.md
+CLAUDE_DESKTOP_REMOTE_SETUP.md
+CLAUDE_DESKTOP_SETUP.md
+CURSOR_SETUP.md
+IMPORTANT_NOTES.md
+TROUBLESHOOTING.md
+setup_remote_connection.sh
