@@ -1,6 +1,10 @@
+This project was created by the AI code editor "Cursor".
+The large language model (LLM) used by Cursor is "GPT-4.1".
+Detailed specifications are documented in [specifications.md](specifications.md).
+
 # DuckDuckGo MCP Server
 
-DuckDuckGoの検索機能を提供するModel Context Protocol (MCP) サーバーである。
+DuckDuckGoの検索機能を提供するModel Context Protocol (MCP) サーバーです。
 
 ## 対応アプリケーション
 
@@ -24,12 +28,12 @@ DuckDuckGoの検索機能を提供するModel Context Protocol (MCP) サーバ�
 
 ### uv を使用する場合（推奨）
 
-1. [uv](https://docs.astral.sh/uv/) をインストール:
+1. [uv](https://docs.astral.sh/uv/) をインストールします:
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-2. プロジェクトの依存関係をインストール:
+2. プロジェクトの依存関係をインストールします:
 ```bash
 uv sync
 ```
@@ -55,12 +59,12 @@ python server.py
 
 ## 使用方法
 
-このMCPサーバーは以下のツールを提供する:
+このMCPサーバーは以下のツールを提供します:
 - `search_duckduckgo`: DuckDuckGoで検索を実行
 
 ## 設定
 
-特別な設定は不要。DuckDuckGoのAPIは無料で利用可能。
+特別な設定は不要です。DuckDuckGoのAPIは無料で利用可能です。
 
 ## テスト
 
@@ -78,7 +82,7 @@ python test_search.py
 
 ## Docker での実行
 
-Docker環境でも実行可能（Python 3.13 + uvとpipの両方をサポート）:
+Docker環境でも実行可能です（Python 3.13 + uvとpipの両方をサポート）:
 
 ```bash
 # ビルドと起動
@@ -95,7 +99,7 @@ docker compose down
 
 ### Claude Desktop
 
-詳細は [`CLAUDE_DESKTOP_SETUP.md`](CLAUDE_DESKTOP_SETUP.md) を参照。
+詳細は [`CLAUDE_DESKTOP_SETUP.md`](CLAUDE_DESKTOP_SETUP.md) を参照してください。
 
 #### ローカル環境（uv）
 ```json
@@ -113,7 +117,7 @@ docker compose down
 
 ### Cursor IDE
 
-詳細は [`CURSOR_SETUP.md`](CURSOR_SETUP.md) を参照。
+詳細は [`CURSOR_SETUP.md`](CURSOR_SETUP.md) を参照してください。
 
 #### プロジェクト設定（`.cursor/mcp.json`）
 ```json
@@ -143,11 +147,11 @@ docker compose down
 
 ### リモート環境での使用
 
-SSH経由でリモートサーバー上のMCP Serverを利用する場合は [`CONNECTION_SOLUTION.md`](CONNECTION_SOLUTION.md) を参照。
+SSH経由でリモートサーバー上のMCP Serverを利用する場合は [`CONNECTION_SOLUTION.md`](CONNECTION_SOLUTION.md) を参照してください。
 
 ## トラブルシューティング
 
-問題が発生した場合は以下を参照：
+問題が発生した場合は以下を参照してください：
 
 - [`TROUBLESHOOTING.md`](TROUBLESHOOTING.md) - 一般的な問題と解決方法
 - [`CONNECTION_SOLUTION.md`](CONNECTION_SOLUTION.md) - リモート接続問題の解決方法
