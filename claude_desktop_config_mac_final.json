@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "duckduckgo-search": {
+      "command": "ssh",
+      "args": [
+        "-o", "StrictHostKeyChecking=no",
+        "dogossegiar.tailb42ea.ts.net",
+        "cd /home/mriki/Workspace/duckduckgo-mcp-server && /home/mriki/.local/bin/uv run duckduckgo-mcp-server"
+      ],
+      "env": {}
+    }
+  }
+} 

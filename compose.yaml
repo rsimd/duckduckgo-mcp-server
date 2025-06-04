@@ -1,0 +1,45 @@
+services:
+  duckduckgo-mcp-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: duckduckgo-mcp-server
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app
+      # uvの仮想環境を使用する場合、PATHは自動的に設定される
+    volumes:
+      # ログやデータの永続化が必要な場合
+      - ./logs:/app/logs
+    networks:
+      - mcp-network
+    restart: unless-stopped
+    # MCPサーバーはSTDIOモードで動作するため、ポートマッピングは通常不要
+    # ports:
+    #   - "8000:8000"
+    
+  # テスト用サービス（オプション）
+  test-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: duckduckgo-test-runner
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app
+    # uvの仮想環境が存在する場合はそれを使用してテストを実行
+    command: ["/bin/bash", "-c", "if [ -d .venv ]; then source .venv/bin/activate && python test_search.py; else python test_search.py; fi"]
+    depends_on:
+      - duckduckgo-mcp-server
+    networks:
+      - mcp-network
+    profiles:
+      - testing
+
+networks:
+  mcp-network:
+    driver: bridge
+
+volumes:
+  logs:
+    driver: local 
